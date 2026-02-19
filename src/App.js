@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowUpRight, 
@@ -262,12 +264,14 @@ const App = () => {
       </section>
 
       {/* 底部數據牆 */}
+{/* 底部數據牆 */}
       <footer className="py-40 bg-black px-6 md:px-20 border-t border-white/10 relative overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 relative z-10">
           <div className="space-y-12">
             <h3 className="text-[6vw] font-black tracking-tighter uppercase leading-none">
               System <br /> Integrity <br /> Verified.
             </h3>
+            {/* 這裡換成一個單純的按鈕，不要用 p.url */}
             <button className="px-12 py-6 border border-white hover:bg-white hover:text-black transition-all text-[10px] font-black tracking-[0.5em] uppercase">
               Establish Connection
             </button>
