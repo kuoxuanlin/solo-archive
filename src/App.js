@@ -271,7 +271,6 @@ const App = () => {
             <h3 className="text-[6vw] font-black tracking-tighter uppercase leading-none">
               System <br /> Integrity <br /> Verified.
             </h3>
-            {/* 這裡換成一個單純的按鈕，不要用 p.url */}
             <button className="px-12 py-6 border border-white hover:bg-white hover:text-black transition-all text-[10px] font-black tracking-[0.5em] uppercase">
               Establish Connection
             </button>
