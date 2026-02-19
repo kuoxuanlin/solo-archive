@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowUpRight, 
@@ -16,8 +14,6 @@ import {
   Terminal,
   Settings
 } from 'lucide-react';
-
-// ... 後面接你原本的 App 代碼
 
 const App = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -45,6 +41,7 @@ const App = () => {
     { 
       id: "SYS-001", 
       title: "SORO FINANCE", 
+      url: "https://my-real-budget-dnkpdnziw-kuoxuanlins-projects.vercel.app/",
       type: "ALGORITHMIC_ENGINE", 
       value: "98.4%", 
       status: "OPTIMIZED",
@@ -87,8 +84,8 @@ const App = () => {
   return (
     <div className="bg-[#0a0a0a] text-[#e0e0e0] font-mono selection:bg-[#ffeb3b] selection:text-black cursor-crosshair">
       
-      {/* 全局掃描線背景 */}
-      <div className="fixed inset-0 pointer-events-none z-[100] opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
+      {/* 全局掃描線背景 - 確保 z-0 且完全不干擾點擊 */}
+<div className="fixed inset-0 pointer-events-none z-0 opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
       
       {/* 互動背景網格 (固定在背景) */}
       <div className="fixed inset-0 z-0 opacity-10">
@@ -247,10 +244,17 @@ const App = () => {
                 </div>
 
                 {/* 行動按鈕：固定在右下角 */}
-                <button className="absolute bottom-12 right-12 w-20 h-20 bg-white text-black flex items-center justify-center hover:bg-[#ffeb3b] hover:scale-110 transition-all duration-500 rounded-none overflow-hidden group/btn">
-                  <ArrowUpRight size={32} className="group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
-              </div>
+<a 
+  href={p.url || "#"} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className="absolute bottom-12 right-12 w-20 h-20 bg-white text-black flex items-center justify-center hover:bg-[#ffeb3b] hover:scale-110 transition-all duration-500 rounded-none overflow-hidden group/btn z-[999] cursor-pointer"
+>
+  <ArrowUpRight 
+    size={32} 
+    className="group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" 
+  />
+</a>
 
             </div>
           </div>
