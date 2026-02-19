@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowUpRight, 
@@ -14,6 +16,8 @@ import {
   Terminal,
   Settings
 } from 'lucide-react';
+
+// ... 後面接你原本的 App 代碼
 
 const App = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
