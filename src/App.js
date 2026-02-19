@@ -170,7 +170,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 產品列表：縱向一頁式 */}
+{/* 產品列表：縱向一頁式 */}
       <section className="relative">
         {products.map((p, i) => (
           <div key={p.id} className="min-h-screen border-b border-white/10 flex flex-col group relative overflow-hidden">
@@ -180,7 +180,7 @@ const App = () => {
               {p.title.split(' ')[0]}
             </div>
 
-            {/* 產品標題區塊 (無聊排版) */}
+            {/* 內容容器 */}
             <div className="grid grid-cols-12 flex-grow h-full">
               
               {/* 左側資訊欄 */}
@@ -220,7 +220,7 @@ const App = () => {
               {/* 右側視覺展示欄 */}
               <div className="col-span-12 md:col-span-7 relative flex items-center justify-center bg-white/[0.02] group-hover:bg-white/[0.05] transition-colors duration-1000">
                 
-                {/* 模擬工業介面的中心框 */}
+                {/* 中心框 */}
                 <div className="w-4/5 aspect-video border border-white/10 relative p-4 group-hover:border-[#ffeb3b]/50 transition-colors">
                   <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-current" />
                   <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-current" />
@@ -228,36 +228,25 @@ const App = () => {
                   <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-current" />
                   
                   <div className="w-full h-full bg-black/40 flex items-center justify-center relative overflow-hidden">
-                    {/* 產品圖標動畫 */}
                     <div className="relative z-10 group-hover:scale-125 transition-transform duration-[2s] ease-in-out">
                       {i === 0 && <BarChart3 size={120} strokeWidth={1} className="text-[#ffeb3b] animate-pulse" />}
                       {i === 1 && <BookOpen size={120} strokeWidth={1} className="text-[#00e5ff] animate-pulse" />}
                       {i === 2 && <CheckCircle2 size={120} strokeWidth={1} className="text-[#ff1744] animate-pulse" />}
                       {i === 3 && <Box size={120} strokeWidth={1} className="text-[#00ff88] animate-pulse" />}
                     </div>
-                    
-                    {/* 背景滾動數據流 */}
-                    <div className="absolute inset-0 flex flex-col gap-1 opacity-[0.05] font-mono text-[8px] overflow-hidden select-none pointer-events-none p-2 animate-flow-down">
-                      {Array.from({ length: 30 }).map((_, idx) => (
-                        <div key={idx}>0101010101110101010101010101011110101010101010101010101010101110101</div>
-                      ))}
-                    </div>
                   </div>
                 </div>
 
-                {/* 行動按鈕：固定在右下角 */}
-<a 
-  href={p.url || "#"} 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="absolute bottom-12 right-12 w-20 h-20 bg-white text-black flex items-center justify-center hover:bg-[#ffeb3b] hover:scale-110 transition-all duration-500 rounded-none overflow-hidden group/btn z-[999] cursor-pointer"
->
-  <ArrowUpRight 
-    size={32} 
-    className="group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" 
-  />
-</a>
-
+                {/* 連結按鈕 */}
+                <a 
+                  href={p.url || "#"} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="absolute bottom-12 right-12 w-20 h-20 bg-white text-black flex items-center justify-center hover:bg-[#ffeb3b] hover:scale-110 transition-all duration-500 z-50"
+                >
+                  <ArrowUpRight size={32} />
+                </a>
+              </div>
             </div>
           </div>
         ))}
